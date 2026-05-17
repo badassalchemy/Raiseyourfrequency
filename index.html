@@ -167,6 +167,7 @@ html,body{background:#0D0610;color:#F7EDF1;font-family:'Montserrat',sans-serif}
 .toast.show{opacity:1}
 
 .tabs>div{display:none}.tabs>div.on{display:block}
+@media(max-width:520px){.tier-grid-resp{grid-template-columns:1fr!important}}
 </style>
 </head>
 <body>
@@ -231,36 +232,78 @@ html,body{background:#0D0610;color:#F7EDF1;font-family:'Montserrat',sans-serif}
       </div>
     </div>
 
-    <div class="skool-blk">
-      <canvas id="sc"></canvas>
-      <div class="skool-in">
-        <div class="skool-hdr">
-          <div class="pw"><div class="pnum">$8</div><span class="pmo">/ month</span></div>
-          <div>
-            <div class="sktitle">The Baddie <em>Society</em></div>
-            <div class="skdesc">A full ecosystem of tools, programs, and containers for women who are done playing small. Instant access the moment you join. Cancel anytime.</div>
-          </div>
+    <!-- CHOOSE YOUR LEVEL -->
+    <div style="font-size:8px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:#B16AA2;margin-bottom:16px;font-family:'Montserrat',sans-serif;padding-top:4px">✦ Choose Your Level</div>
+
+    <!-- TWO TIER CARDS -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px">
+
+      <!-- STANDARD $8 -->
+      <div style="background:#180B1E;border:1px solid rgba(179,106,162,0.22);border-radius:16px;overflow:hidden;display:flex;flex-direction:column">
+        <div style="background:linear-gradient(160deg,#2A0E1E,#3D1428);padding:20px 18px;text-align:center;border-bottom:1px solid rgba(179,106,162,0.15)">
+          <div style="font-size:8px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#B16AA2;font-family:'Montserrat',sans-serif;margin-bottom:8px">Standard</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:700;color:#F7EDF1;line-height:1">$8</div>
+          <div style="font-size:9px;color:#8A6080;font-weight:700;letter-spacing:1px;text-transform:uppercase;font-family:'Montserrat',sans-serif;margin-top:4px">per month</div>
         </div>
-        <div class="vlabel">Everything Inside · Instant Access</div>
-        <div class="vgrid" id="vault"></div>
-        <div class="more-line">🤩 And new content added every single week.</div>
-        <a href="https://www.skool.com/baddie-society-6535/about" target="_blank" class="sbtn">Join The Baddie Society — $8/mo →</a>
-        <div class="cancel">Cancel anytime · Secure payment · Hosted on Skool</div>
+        <div style="padding:16px 18px;flex:1">
+          <div style="font-size:8px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#B16AA2;font-family:'Montserrat',sans-serif;margin-bottom:12px">Included</div>
+          <div id="vault-standard"></div>
+          <div style="font-size:11px;font-style:italic;color:#8A6080;font-family:'Cormorant Garamond',serif;margin-top:12px;line-height:1.5">🤍 New drops added every week</div>
+        </div>
+        <div style="padding:16px 18px;border-top:1px solid rgba(179,106,162,0.1)">
+          <a href="https://www.skool.com/baddie-society-6535/about" target="_blank" class="sbtn" style="font-size:10px;padding:12px 16px">Join Now — $8/mo →</a>
+          <div class="cancel" style="margin-top:8px">Cancel anytime · Hosted on Skool</div>
+        </div>
       </div>
+
+      <!-- PREMIUM $27 -->
+      <div style="background:#180B1E;border:2px solid rgba(115,57,96,0.6);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;position:relative">
+        <div style="position:absolute;top:10px;right:10px;background:linear-gradient(135deg,#733960,#B16AA2);font-size:7px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#F7EDF1;padding:4px 10px;border-radius:20px;font-family:'Montserrat',sans-serif;z-index:2">Best Value</div>
+        <div style="background:linear-gradient(160deg,#3A0F2A,#5C1640);padding:20px 18px;text-align:center;border-bottom:1px solid rgba(115,57,96,0.3)">
+          <div style="font-size:8px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#C4789A;font-family:'Montserrat',sans-serif;margin-bottom:8px">Premium Subscription</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:700;color:#F7EDF1;line-height:1">$27</div>
+          <div style="font-size:9px;color:#8A6080;font-weight:700;letter-spacing:1px;text-transform:uppercase;font-family:'Montserrat',sans-serif;margin-top:4px">per month</div>
+        </div>
+        <div style="padding:16px 18px;flex:1">
+          <div style="font-size:8px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#C4789A;font-family:'Montserrat',sans-serif;margin-bottom:12px">Everything in Standard, plus</div>
+          <div id="vault-premium"></div>
+          <div style="font-size:11px;font-style:italic;color:#8A6080;font-family:'Cormorant Garamond',serif;margin-top:12px;line-height:1.5">✨ New premium content added every week</div>
+        </div>
+        <div style="padding:16px 18px;border-top:1px solid rgba(115,57,96,0.2)">
+          <a href="https://www.skool.com/baddie-society-6535/about" target="_blank" class="sbtn" style="font-size:10px;padding:12px 16px;background:linear-gradient(135deg,#461D34,#733960);box-shadow:0 8px 24px rgba(115,57,96,0.45)">Upgrade — $27/mo →</a>
+          <div class="cancel" style="margin-top:8px">Cancel anytime · Hosted on Skool</div>
+        </div>
+      </div>
+
     </div>
 
-    <div class="qq-blk">
+    <!-- ITALIC SIGN-OFF -->
+    <div style="text-align:center;padding:16px 0 24px">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic;color:#C4789A;margin-bottom:4px">Enter the world.</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic;color:#C4789A;margin-bottom:4px">Shift your identity.</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic;color:#C4789A">Become unavailable for the version of you that no longer fits.</div>
+    </div>
+
+    <!-- QUANTUM QUEEN — INVITATION ONLY -->
+    <div class="qq-blk" style="background-image:url('https://github.com/badassalchemy/imageassets/blob/main/dark%20nebula%20baxckground.jpg?raw=true');background-size:cover;background-position:center">
       <canvas id="qqc"></canvas>
       <div class="qq-in">
-        <div class="qq-badge">Signature High-Ticket Container</div>
+        <div class="qq-badge">Invitation Only</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:15px;color:#C4A0B8;font-style:italic;margin-bottom:20px;line-height:1.7">The Baddie Society is the immersion.<br>Quantum Queen is the transformation.</div>
         <div class="qqt">The Quantum <em>Queen</em></div>
-        <div class="qqsub">Danielle's signature 90-day transformation container for the woman who is ready for full expansion.</div>
-        <p class="qqbody">This is not a course. This is a complete rewire — shadow work, beliefs, frequency, and identity all in one container. For the woman who has done the work and knows she's ready to go all the way in. Members of The Baddie Society get first access and founding pricing when it launches.</p>
+        <div class="qqsub">Danielle's signature 90-day transformation experience for the woman ready to fully embody her highest timeline.</div>
+        <p class="qqbody">Personalized support, deeper identity work, business expansion, and full-spectrum transformation. Shadow work, beliefs, frequency, nervous system, identity, and embodiment — all of it. This container is invitation only. Join the Society and get on the waitlist.</p>
         <div class="qqpills">
-          <span class="qp">90 Days</span><span class="qp">Shadow Work</span><span class="qp">Identity Rewire</span><span class="qp">Frequency Work</span><span class="qp">Full Expansion</span><span class="qp">Members First Access</span><span class="qp">Founding Pricing</span>
+          <span class="qp">90 Days</span>
+          <span class="qp">Invitation Only</span>
+          <span class="qp">Personalized Support</span>
+          <span class="qp">Shadow Work</span>
+          <span class="qp">Identity Rewire</span>
+          <span class="qp">Business Expansion</span>
+          <span class="qp">Full Embodiment</span>
         </div>
-        <a href="https://www.skool.com/baddie-society-6535/about" target="_blank" class="sbtn">Join The Baddie Society for First Access →</a>
-        <div class="cancel">Members get founding pricing when Quantum Queen launches</div>
+        <a href="https://www.skool.com/baddie-society-6535/about" target="_blank" class="sbtn" style="background:linear-gradient(135deg,#1A0828,#461D34)">👑 Join the Waitlist via The Baddie Society →</a>
+        <div class="cancel">Booking opens soon · Members are first to know</div>
       </div>
     </div>
 
@@ -269,13 +312,86 @@ html,body{background:#0D0610;color:#F7EDF1;font-family:'Montserrat',sans-serif}
 </div>
 </div>
 
+<!-- JOURNAL SALES SECTION -->
+<div style="background:linear-gradient(160deg,#0D0618,#1A0828,#2A0E1E);border-top:1px solid rgba(179,106,162,0.15);padding:0 0 0 0">
+
+  <!-- HOOK -->
+  <div style="position:relative;overflow:hidden;padding:56px 24px 48px;text-align:center" id="journal-hero-wrap">
+    <div style="position:absolute;inset:0;background-image:url('https://github.com/badassalchemy/imageassets/blob/main/dark%20nebula%20baxckground.jpg?raw=true');background-size:cover;background-position:center 40%"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(160deg,rgba(13,6,24,0.82),rgba(44,14,42,0.75))"></div>
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 60%,rgba(200,60,120,0.18),transparent 65%)"></div>
+    <div style="position:relative">
+      <div style="font-size:9px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:#B16AA2;font-family:'Montserrat',sans-serif;margin-bottom:14px">✦ Inside The Baddie Society · Included with $8</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;color:#C4A0B8;margin-bottom:10px">You've been setting intentions.</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;color:#F7EDF1;line-height:1.2;margin-bottom:10px">But are you actually<br><em style="color:#C4789A">wiring them in?</em></div>
+      <p style="font-size:14px;color:#C4A0B8;line-height:1.8;max-width:480px;margin:0 auto 20px">Most women set intentions in their head and wonder why nothing shifts. The Biz Baddie Manifestation Journal takes you out of your head and into your <strong style="color:#E8D4E0">nervous system</strong> — where manifestation actually happens.</p>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;color:#C4789A">10 minutes a day. Soul meets strategy. Every single session.</div>
+    </div>
+  </div>
+
+  <div style="max-width:700px;margin:0 auto;padding:0 22px 60px">
+
+    <!-- THE PROBLEM -->
+    <div style="padding:36px 0 28px;text-align:center;border-bottom:1px solid rgba(179,106,162,0.12)">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:#F7EDF1;margin-bottom:16px">Here's why your manifestations<br>keep <em style="color:#C4789A">stalling.</em></div>
+      <div style="display:flex;flex-direction:column;gap:10px;text-align:left;max-width:480px;margin:0 auto" id="problem-list"></div>
+    </div>
+
+    <!-- WHAT IT IS -->
+    <div style="padding:36px 0 28px;border-bottom:1px solid rgba(179,106,162,0.12)">
+      <div style="font-size:9px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:#B16AA2;font-family:'Montserrat',sans-serif;margin-bottom:16px">What the Journal actually does</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:#F7EDF1;margin-bottom:8px;line-height:1.3">It moves you from <em style="color:#C4789A">wishing</em><br>to <em style="color:#C4789A">wiring.</em></div>
+      <p style="font-size:13px;color:#C4A0B8;line-height:1.8;margin-bottom:24px">Every session runs you through a 6-step process that takes your nervous system from wherever it is — stressed, scattered, stuck — and walks you into the identity of the woman who already has what she's calling in. Not by thinking harder. By <strong style="color:#E8D4E0">feeling it first.</strong></p>
+
+      <!-- 6 SECTIONS -->
+      <div style="display:flex;flex-direction:column;gap:10px" id="journal-sections"></div>
+    </div>
+
+    <!-- THE PSYCHOLOGY / WHAT HAPPENS OVER TIME -->
+    <div style="padding:36px 0 28px;border-bottom:1px solid rgba(179,106,162,0.12)">
+      <div style="font-size:9px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:#B16AA2;font-family:'Montserrat',sans-serif;margin-bottom:16px">What happens when you use it consistently</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:#F7EDF1;margin-bottom:20px;line-height:1.3">Your history drawer becomes<br>a record of your <em style="color:#C4789A">evolution.</em></div>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px" id="evolution-list"></div>
+      <div style="background:rgba(115,57,96,0.1);border:1px solid rgba(115,57,96,0.25);border-radius:12px;padding:20px 22px">
+        <p style="font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:#E8D4E0;line-height:1.75;margin:0">The history drawer keeps every entry she's ever written. She can scroll back and see how her scripts, her beliefs, her energy — all of it — changed month over month. <strong style="font-style:normal;color:#F7EDF1">She stops wondering if she's growing. She can see the proof.</strong></p>
+      </div>
+    </div>
+
+    <!-- FEATURES AT A GLANCE -->
+    <div style="padding:36px 0 28px;border-bottom:1px solid rgba(179,106,162,0.12)">
+      <div style="font-size:9px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:#B16AA2;font-family:'Montserrat',sans-serif;margin-bottom:16px">Built different</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:#F7EDF1;margin-bottom:20px">Not a PDF. Not a template.<br><em style="color:#C4789A">A living portal.</em></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px" id="features-grid"></div>
+    </div>
+
+    <!-- PORTAL FRAMING / CLOSE -->
+    <div style="padding:40px 0 0;text-align:center">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;color:#8A6080;margin-bottom:12px;letter-spacing:1px">the portal is already open.</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:#F7EDF1;line-height:1.25;margin-bottom:16px">The question is whether<br>you're going to <em style="color:#C4789A">walk through it.</em></div>
+      <p style="font-size:13px;color:#C4A0B8;line-height:1.8;max-width:420px;margin:0 auto 28px">Join The Baddie Society for $8/month and get instant access to the journal, the Rich Girl Reset audio series, the EFT Vault, the Oracle, the Shadow to Sovereign Deck — and every new drop that comes after.<br><br><strong style="color:#E8D4E0">The woman you're becoming is already scripting her next chapter. She's just waiting for you to open the page.</strong></p>
+
+      <!-- FINAL CTA -->
+      <a href="https://www.skool.com/baddie-society-6535/about" target="_blank" class="sbtn inline" style="font-size:12px;padding:16px 40px;box-shadow:0 10px 32px rgba(115,57,96,0.5)">✦ Open Your Portal — Join for $8/mo</a>
+      <div style="font-size:10px;color:#5A3A50;margin-top:12px;font-family:'Montserrat',sans-serif">Cancel anytime · Instant access · No app download needed</div>
+
+      <!-- MICRO TESTIMONIAL -->
+      <div style="margin-top:32px;background:#180B1E;border:1px solid rgba(179,106,162,0.15);border-radius:14px;padding:22px 24px;text-align:left;max-width:480px;margin-left:auto;margin-right:auto">
+        <p style="font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:#E8D4E0;line-height:1.72;margin:0 0 10px">"Since I got the Abundance PDF and did the prompts as well as religiously listening to the abundance track daily, I've manifested more clients, more income, and it empowered me to raise my rates this year!!!"</p>
+        <div style="font-size:8px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#B16AA2;font-family:'Montserrat',sans-serif">✦ Baddie Society Member</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- TRUE FOOTER -->
 <div class="footer" id="footer-wrap">
   <canvas id="fc"></canvas>
   <div class="footer-in">
-    <div style="font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;color:#FA9CE0;margin-bottom:14px;letter-spacing:1.5px">receive. trust. become.</div>
-    <div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;color:#F0E8F8;line-height:1.3;margin-bottom:20px">Regulate. Raise your frequency. <span style="color:#FA9CE0;font-style:italic">Receive.</span></div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;color:#C4789A;margin-bottom:14px;letter-spacing:1.5px">receive. trust. become.</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:#F7EDF1;line-height:1.3;margin-bottom:20px">Regulate. Raise your frequency. <span style="color:#C4789A;font-style:italic">Receive.</span></div>
     <a href="https://www.skool.com/baddie-society-6535/about" target="_blank" class="sbtn inline">Join The Baddie Society — $8/mo →</a>
-    <div style="font-size:9px;font-weight:700;color:#CFAEDC;letter-spacing:2px;margin-top:22px;text-transform:uppercase">✦ Badass Alchemy™ · You were made for more ✦</div>
+    <div style="font-size:9px;font-weight:700;color:#C6B6CD;letter-spacing:2px;margin-top:22px;text-transform:uppercase">✦ Badass Alchemy™ · You were made for more ✦</div>
   </div>
 </div>
 
@@ -446,15 +562,111 @@ function buildTestimonials(){
 }
 
 function buildVault(){
+  // Legacy vault grid (not used in go deeper tab anymore, kept for safety)
   const g=document.getElementById('vault');
-  vault.forEach(v=>{
+  if(g){vault.forEach(v=>{
     const d=document.createElement('div');d.className='vi';
     d.innerHTML=`<div class="vi-i">${v.i}</div><div class="vi-n">${v.n}</div><div class="vi-d">${v.d}</div>`;
     g.appendChild(d);
+  });}
+}
+
+function buildTieredVault(){
+  const standard=[
+    {i:"🎧",n:"The Rich Girl Reset",d:"5-day high-frequency audio series to rewire your subconscious for money, opportunities, and abundance"},
+    {i:"✨",n:"EFT Vault",d:"Tap your way into the most magnetic version of yourself"},
+    {i:"📝",n:"Biz Baddie Manifestation Journal",d:"10-minute daily practice — script your future, regulate your energy, one aligned move every day"},
+    {i:"🔮",n:"Consult the Oracle",d:"Your therapist and strategist rolled into one — turn shadows into power and purpose"},
+    {i:"🃏",n:"Shadow to Sovereign Deck",d:"Pick a daily card to tap into a higher frequency"},
+  ];
+  const premium=[
+    {i:"🔥",n:"The Identity Detox",d:"3-part deep dive to rewire from scarcity mindset to queen mindset — find what's holding you back and shed that old identity"},
+    {i:"💰",n:"Clear Your Money Blocks",d:"Release the subconscious patterns keeping you stuck in scarcity, inconsistency, overworking, and self-doubt"},
+    {i:"🎨",n:"The Art of Receiving",d:"The full embodiment process — so abundance doesn't just arrive, it stays. Remove the blocks to receiving and holding more"},
+  ];
+  const gs=document.getElementById('vault-standard');
+  const gp=document.getElementById('vault-premium');
+  if(gs) standard.forEach(v=>{
+    const d=document.createElement('div');
+    d.style.cssText='display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid rgba(179,106,162,0.08)';
+    d.innerHTML=`<span style="font-size:14px;flex-shrink:0">${v.i}</span><div><div style="font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:700;color:#F7EDF1;margin-bottom:2px">${v.n}</div><div style="font-size:10px;color:#8A6080;line-height:1.4">${v.d}</div></div>`;
+    gs.appendChild(d);
+  });
+  if(gp) premium.forEach(v=>{
+    const d=document.createElement('div');
+    d.style.cssText='display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid rgba(115,57,96,0.12)';
+    d.innerHTML=`<span style="font-size:14px;flex-shrink:0">${v.i}</span><div><div style="font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:700;color:#F7EDF1;margin-bottom:2px">${v.n}</div><div style="font-size:10px;color:#8A6080;line-height:1.4">${v.d}</div></div>`;
+    gp.appendChild(d);
   });
 }
 
-buildTicker();buildDots();buildSessions();buildAffirms();buildTestimonials();buildVault();buildForWoman();
+buildTicker();buildDots();buildSessions();buildAffirms();buildTestimonials();buildVault();buildTieredVault();buildForWoman();buildJournalSections();
+
+function buildJournalSections(){
+  // Problem list
+  const problems=[
+    "You're setting intentions in your head, not in your body — and your nervous system is still running the old identity.",
+    "You're consuming content, listening to podcasts, reading books — but nothing is actually sticking at the root level.",
+    "You journal sometimes, but there's no structure pulling you into the feeling of having it — so it stays in your head as a wish.",
+    "You don't have a consistent daily practice that regulates your energy AND scripts your next level at the same time."
+  ];
+  const pl=document.getElementById('problem-list');
+  if(pl) problems.forEach(p=>{
+    const d=document.createElement('div');
+    d.style.cssText='display:flex;align-items:flex-start;gap:12px;background:#180B1E;border:1px solid rgba(179,106,162,0.12);border-radius:10px;padding:13px 15px';
+    d.innerHTML='<span style="color:#733960;font-size:16px;flex-shrink:0;margin-top:1px">✦</span><span style="font-family:Montserrat,sans-serif;font-size:13px;color:#C4A0B8;line-height:1.65">'+p+'</span>';
+    pl.appendChild(d);
+  });
+
+  // 6 Journal sections
+  const sections=[
+    {icon:"🌙",name:"Daily Sacred Spread",desc:"Nervous system check-in → mood + body scan → present-tense manifestation script → embody the feeling physically → one inspired action → intuitive hits. The full wiring sequence in 10 minutes."},
+    {icon:"👁",name:"Weekly Vision Spread",desc:"Income, launches, visibility, and feeling — set the vision, name your top 3 manifestations, check where you're forcing vs flowing, track synchronicities as evidence."},
+    {icon:"📊",name:"Monthly Review & Reset",desc:"Wins, what you actually manifested, what moved the needle, beliefs that shifted, what you're releasing — ends with your next month's Empire Declaration. Exportable as a clean PDF."},
+    {icon:"🃏",name:"Prompt Library",desc:"5 categories: Future Self, Client & Community, Money & Abundance, Resistance & Shadow, Create Your Day. Random prompt pull button. Write directly inside the tool — auto-saved by date."},
+    {icon:"369",name:"3/6/9 Method",desc:"Your focus statement written 3x morning, 6x afternoon, 9x evening. Each session saved separately by date. The repetition that rewires."},
+    {icon:"🔥",name:"Streak Tracker",desc:"Visual weekly dot tracker, current streak + total sessions, streak badge in the nav. The accountability that makes consistency feel like identity — not effort."}
+  ];
+  const sc=document.getElementById('journal-sections');
+  if(sc) sections.forEach(s=>{
+    const d=document.createElement('div');
+    d.style.cssText='display:flex;align-items:flex-start;gap:14px;background:#180B1E;border:1px solid rgba(179,106,162,0.12);border-radius:12px;padding:16px 18px';
+    d.innerHTML='<div style="width:38px;height:38px;border-radius:10px;background:rgba(115,57,96,0.2);border:1px solid rgba(115,57,96,0.3);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0">'+s.icon+'</div><div><div style="font-family:Cormorant Garamond,serif;font-size:15px;font-weight:700;color:#F7EDF1;margin-bottom:4px">'+s.name+'</div><div style="font-size:12px;color:#8A6080;line-height:1.6">'+s.desc+'</div></div>';
+    sc.appendChild(d);
+  });
+
+  // Evolution list
+  const evolution=[
+    "Week 1: She starts showing up with intention instead of anxiety. One aligned move a day compounds faster than she expected.",
+    "Week 2-3: She notices her scripts shifting — what she's asking for gets bolder. Her nervous system stops rejecting the vision.",
+    "Month 2: She scrolls back through her history drawer and can see the evidence. Things she scripted in week one have already arrived.",
+    "Month 3+: She stops waiting to feel ready. She writes from the identity of the woman who already has it — and the gap starts closing."
+  ];
+  const el=document.getElementById('evolution-list');
+  if(el) evolution.forEach((e,i)=>{
+    const d=document.createElement('div');
+    d.style.cssText='display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid rgba(179,106,162,0.08)';
+    d.innerHTML='<div style="width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#733960,#B16AA2);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#F7EDF1;font-family:Montserrat,sans-serif;flex-shrink:0">'+(i+1)+'</div><span style="font-size:13px;color:#C4A0B8;line-height:1.65;font-family:Montserrat,sans-serif">'+e+'</span>';
+    el.appendChild(d);
+  });
+
+  // Features grid
+  const features=[
+    {icon:"💾",name:"Auto-saves as you type",desc:"No button. No login. Just write."},
+    {icon:"📖",name:"History drawer",desc:"Every past entry, browsable by date. Your evolution on record."},
+    {icon:"✨",name:"Affirmation of the day",desc:"31 rotating Badass Alchemy affirmations — one per day."},
+    {icon:"📋",name:"Copy all entries",desc:"One tap. Paste into Notion, Notes, or email."},
+    {icon:"🖨",name:"Export & print",desc:"Monthly review generates a clean printable page."},
+    {icon:"📱",name:"Works on any device",desc:"No download. Open in browser. She's in."}
+  ];
+  const fg=document.getElementById('features-grid');
+  if(fg) features.forEach(f=>{
+    const d=document.createElement('div');
+    d.style.cssText='background:#180B1E;border:1px solid rgba(179,106,162,0.12);border-radius:10px;padding:14px';
+    d.innerHTML='<div style="font-size:18px;margin-bottom:6px">'+f.icon+'</div><div style="font-family:Cormorant Garamond,serif;font-size:13px;font-weight:700;color:#F7EDF1;margin-bottom:3px">'+f.name+'</div><div style="font-size:10px;color:#8A6080;line-height:1.4">'+f.desc+'</div>';
+    fg.appendChild(d);
+  });
+}
 
 function buildForWoman(){
   const c=document.getElementById('for-woman-list');
